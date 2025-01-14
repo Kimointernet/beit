@@ -194,165 +194,81 @@
         background-color: #d9a702;
         transform: scale(1.05);
     }
-       /* تصميم الحاوية */
-    .translation-container {
-        text-align: center;
-        margin: 1.5rem auto;
-    }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #a19f02;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
-    /* تصميم زر الترجمة */
-    .translate-button {
-        background-color: #f8c102; /* لون الزر الأساسي */
-        color: #1e1e1e; /* لون النص */
-        font-size: 1rem; /* حجم النص */
-        padding: 0.8rem 1.5rem; /* المسافة الداخلية */
-        border: none; /* إزالة الحواف الافتراضية */
-        border-radius: 8px; /* زوايا دائرية */
-        cursor: pointer; /* تغيير المؤشر عند المرور */
-        transition: background-color 0.3s, transform 0.3s; /* تأثيرات الانتقال */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ظل الزر */
-    }
+        .like-button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #e74c3c;
+            outline: none;
+        }
 
-    /* تأثير عند مرور الماوس */
-    .translate-button:hover {
-        background-color: #d9a702; /* لون مختلف عند المرور */
-        transform: scale(1.05); /* تكبير الزر قليلاً */
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* زيادة الظل */
-    }
+        .star-rating {
+            margin: 10px 0;
+        }
 
-    /* تأثير عند النقر */
-    .translate-button:active {
-        transform: scale(0.95); /* تصغير طفيف عند النقر */
-        background-color: #c0a602; /* لون أغمق */
-    }
-    /* إعدادات عامة */
-body {
-    font-family: 'Cairo', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #121212;
-    color: #e5e5e5;
-    line-height: 1.8;
-}
+        .star {
+            font-size: 24px;
+            cursor: pointer;
+            color: #ccc;
+        }
 
-/* جعل الرأس يتناسب مع الشاشة */
-header {
-    text-align: center;
-    background: linear-gradient(135deg, #3a3a3a, #000);
-    color: #f8c102;
-    padding: 2.5rem 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
+        .star:hover,
+        .star.selected {
+            color: gold;
+        }
 
-/* التأكد من تنسيق النصوص والأزرار حسب حجم الشاشة */
-header h1 {
-    margin: 0;
-    font-size: 3rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
+        .comments-section {
+            margin-top: 20px;
+        }
 
-/* التعديلات لأجهزة الهاتف والحواسيب */
-@media (max-width: 768px) {
-    /* رأس الصفحة */
-    header h1 {
-        font-size: 2.5rem;
-    }
+        textarea {
+            width: 100%;
+            height: 60px;
+            border: 1px solid #141313;
+            border-radius: 4px;
+            padding: 8px;
+            margin-bottom: 10px;
+            resize: none;
+        }
 
-    header p {
-        font-size: 1.1rem;
-    }
+        button {
+            padding: 10px 20px;
+            background: #3498db;
+            color: #f7ebeb;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-    /* قسم التعريف */
-    .about {
-        padding: 2rem;
-        margin: 1rem;
-    }
+        button:hover {
+            background: #2980b9;
+        }
 
-    .about h2 {
-        font-size: 1.8rem;
-    }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
 
-    .about p {
-        font-size: 1rem;
-    }
+        ul li {
+            background: #e62020;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 4px;
+        }
 
-    /* قسم الخدمات */
-    .services {
-        padding: 2rem;
-    }
-
-    .services h2 {
-        font-size: 1.8rem;
-    }
-
-    .service-list {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .service-item {
-        max-width: 100%;
-    }
-
-    /* الخريطة */
-    .map-container {
-        padding: 1.5rem;
-    }
-
-    .map-container h2 {
-        font-size: 1.8rem;
-    }
-
-    .map-wrapper iframe {
-        height: 300px;
-    }
-
-    /* الزر الترجمة */
-    .translate-button {
-        font-size: 0.9rem;
-        padding: 0.7rem 1.2rem;
-    }
-}
-
-/* للأجهزة الأكبر من 768px */
-@media (min-width: 769px) {
-    /* قسم التعريف */
-    .about {
-        padding: 3rem;
-        max-width: 1000px;
-    }
-
-    /* قسم الخدمات */
-    .service-list {
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    .service-item {
-        max-width: 280px;
-    }
-
-    /* الخريطة */
-    .map-container {
-        max-width: 900px;
-    }
-
-    .map-wrapper iframe {
-        height: 400px;
-    }
-}
     </style>
 </head>
 <body>
-    <!-- أداة ترجمة Google -->
-    <div id="google_translate_element" style="text-align: center; margin: 10px 0;"></div>
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'ar'}, 'google_translate_element');
-        }
-    </script>
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script>
         // تعطيل عرض كود المصدر باستخدام Ctrl+U
@@ -433,6 +349,128 @@ header h1 {
         </div>
         <a href="https://maps.app.goo.gl/87YCDG8mbAoBM5Hh8" class="map-link" target="_blank">افتح الخريطة في Google Maps</a>
     </section>
+    <div class="container">
+        <h1>منشور تفاعلي</h1>
+        <p id="view-count">المشاهدات: <span id="views">0</span></p>
+
+        <!-- زر الإعجاب -->
+        <button id="like-button" class="like-button">❤️ <span id="likes">0</span></button>
+
+        <!-- التقييم بالنجوم -->
+        <div class="star-rating">
+            <span class="star" data-value="1">☆</span>
+            <span class="star" data-value="2">☆</span>
+            <span class="star" data-value="3">☆</span>
+            <span class="star" data-value="4">☆</span>
+            <span class="star" data-value="5">☆</span>
+        </div>
+
+        <!-- سجل التعليقات -->
+        <div class="comments-section">
+            <h3>التعليقات</h3>
+            <textarea id="comment-input" placeholder="أضف تعليقًا..."></textarea>
+            <button id="add-comment">إضافة</button>
+            <ul id="comments-list"></ul>
+        </div>
+    </div>
+
+    <script>
+        // توليد معرف فريد للجهاز
+        function getDeviceId() {
+            let deviceId = localStorage.getItem('deviceId');
+            if (!deviceId) {
+                deviceId = 'device-' + Math.random().toString(36).substr(2, 9);
+                localStorage.setItem('deviceId', deviceId);
+            }
+            return deviceId;
+        }
+
+        const deviceId = getDeviceId();
+
+        // عداد المشاهدات
+        document.addEventListener('DOMContentLoaded', () => {
+            let viewsData = JSON.parse(localStorage.getItem('viewsData')) || {};
+            if (!viewsData[deviceId]) {
+                viewsData[deviceId] = true;
+                const totalViews = Object.keys(viewsData).length;
+                localStorage.setItem('viewsData', JSON.stringify(viewsData));
+                document.getElementById('views').innerText = totalViews;
+            } else {
+                document.getElementById('views').innerText = Object.keys(viewsData).length;
+            }
+
+            // الإعجابات
+            let likes = localStorage.getItem('likes') || 0;
+            document.getElementById('likes').innerText = likes;
+
+            document.getElementById('like-button').addEventListener('click', () => {
+                likes++;
+                localStorage.setItem('likes', likes);
+                document.getElementById('likes').innerText = likes;
+            });
+
+            // التقييم بالنجوم
+            const stars = document.querySelectorAll('.star');
+            const savedRating = localStorage.getItem('rating');
+            if (savedRating) {
+                stars.forEach((star, index) => {
+                    if (index < savedRating) star.classList.add('selected');
+                });
+            }
+
+            stars.forEach(star => {
+                star.addEventListener('click', () => {
+                    const rating = star.getAttribute('data-value');
+                    localStorage.setItem('rating', rating);
+                    stars.forEach(s => s.classList.remove('selected'));
+                    for (let i = 0; i < rating; i++) {
+                        stars[i].classList.add('selected');
+                    }
+                });
+            });
+
+            // سجل التعليقات
+            const savedComments = JSON.parse(localStorage.getItem('comments')) || [];
+            const commentList = document.getElementById('comments-list');
+            savedComments.forEach(comment => {
+                const newComment = createCommentElement(comment);
+                commentList.appendChild(newComment);
+            });
+
+            document.getElementById('add-comment').addEventListener('click', () => {
+                const commentInput = document.getElementById('comment-input');
+                const commentText = commentInput.value.trim();
+
+                if (commentText !== '') {
+                    const comment = {
+                        text: commentText,
+                        timestamp: new Date().toLocaleString(),
+                    };
+
+                    savedComments.push(comment);
+                    localStorage.setItem('comments', JSON.stringify(savedComments));
+
+                    const newComment = createCommentElement(comment);
+                    commentList.appendChild(newComment);
+
+                    commentInput.value = '';
+                }
+            });
+        });
+
+        function createCommentElement(comment) {
+            const li = document.createElement('li');
+            const header = document.createElement('div');
+            header.classList.add('comment-header');
+            header.textContent = "في "+comment.timestamp;
+            const text = document.createElement('p');
+            text.textContent = comment.text;
+
+            li.appendChild(header);
+            li.appendChild(text);
+            return li;
+        }
+    </script>
     
 
     <!-- التذييل -->
