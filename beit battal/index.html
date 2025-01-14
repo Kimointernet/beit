@@ -3,131 +3,400 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بيت بتال</title>
+    <title>بيت بتال - VIP</title>
     <style>
         /* إعدادات عامة */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Cairo', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
+            background-color: #121212;
+            color: #e5e5e5;
+            line-height: 1.8;
         }
 
         /* رأس الصفحة */
         header {
             text-align: center;
-            background-color: #d60d0d;
-            color: white;
-            padding: 2rem 1rem;
+            background: linear-gradient(135deg, #3a3a3a, #000);
+            color: #f8c102;
+            padding: 2.5rem 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 3rem;
+            font-weight: bold;
+            letter-spacing: 2px;
         }
 
         header p {
-            font-size: 1.2rem;
-            margin: 0.5rem 0 0;
+            font-size: 1.3rem;
+            margin-top: 0.5rem;
         }
 
         /* قسم التعريف */
         .about {
-            padding: 2rem;
-            background-color: #fff;
+            padding: 3rem;
+            background-color: #1f1f1f;
             margin: 2rem auto;
-            max-width: 800px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         .about h2 {
-            color: #d60d0d;
-            margin-bottom: 1rem;
+            color: #f8c102;
+            margin-bottom: 1.5rem;
             text-align: center;
+            font-size: 2rem;
         }
 
         .about p {
             text-align: justify;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
 
         /* قسم الخدمات */
         .services {
-            background-color: #f9f9f9;
-            padding: 2rem;
+            background: linear-gradient(135deg, #202020, #101010);
+            padding: 3rem;
         }
 
         .services h2 {
-            color: #d60d0d;
+            color: #f8c102;
             text-align: center;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
         }
 
         .service-list {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
         .service-item {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 1rem;
-            max-width: 300px;
+            background-color: #292929;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            max-width: 280px;
             text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-item:hover {
+            transform: scale(1.05);
         }
 
         .service-item h3 {
-            margin-bottom: 0.5rem;
-            color: #d60d0d;
+            margin-bottom: 0.7rem;
+            color: #f8c102;
         }
 
         .service-item p {
-            font-size: 0.9rem;
-            color: #666;
+            font-size: 1rem;
+            color: #b5b5b5;
         }
 
         /* التذييل */
         footer {
-            background-color: #d60d0d;
-            color: white;
+            background: linear-gradient(135deg, #3a3a3a, #000);
+            color: #f8c102;
             text-align: center;
-            padding: 1rem 0;
+            padding: 1.5rem 0;
         }
 
         footer p {
-            margin: 0;
+            margin: 0.5rem 0;
+            font-size: 1rem;
         }
-        img{
-            border-radius: 50%;
-            width: 300px;
-            height: 300px;
-            text-align: center;
+
+        /* الصور */
+        img {
+            border-radius: 12px;
+            width: 350px;
+            height: auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
         }
+
+        /* زر القائمة */
+        .menu-link {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.7rem 1.5rem;
+            background: linear-gradient(135deg, #f8c102, #d4a200);
+            color: black;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .menu-link:hover {
+            background: linear-gradient(135deg, #d4a200, #f8c102);
+            transform: scale(1.1);
+        }
+      /* تصميم قسم الخريطة */
+    .map-container {
+        padding: 2rem;
+        background-color: #1e1e1e;
+        color: #fff;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        margin: 2rem auto;
+        max-width: 900px;
+    }
+
+    .map-container h2 {
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        color: #f8c102;
+    }
+
+    .map-container p {
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+        color: #ccc;
+    }
+
+    .map-wrapper {
+        margin: 0 auto 1rem;
+        max-width: 100%;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .map-wrapper iframe {
+        width: 100%;
+        height: 400px;
+        border: none;
+    }
+
+    .map-link {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.8rem 1.5rem;
+        background-color: #f8c102;
+        color: #1e1e1e;
+        text-decoration: none;
+        font-size: 1rem;
+        border-radius: 5px;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .map-link:hover {
+        background-color: #d9a702;
+        transform: scale(1.05);
+    }
+       /* تصميم الحاوية */
+    .translation-container {
+        text-align: center;
+        margin: 1.5rem auto;
+    }
+
+    /* تصميم زر الترجمة */
+    .translate-button {
+        background-color: #f8c102; /* لون الزر الأساسي */
+        color: #1e1e1e; /* لون النص */
+        font-size: 1rem; /* حجم النص */
+        padding: 0.8rem 1.5rem; /* المسافة الداخلية */
+        border: none; /* إزالة الحواف الافتراضية */
+        border-radius: 8px; /* زوايا دائرية */
+        cursor: pointer; /* تغيير المؤشر عند المرور */
+        transition: background-color 0.3s, transform 0.3s; /* تأثيرات الانتقال */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ظل الزر */
+    }
+
+    /* تأثير عند مرور الماوس */
+    .translate-button:hover {
+        background-color: #d9a702; /* لون مختلف عند المرور */
+        transform: scale(1.05); /* تكبير الزر قليلاً */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* زيادة الظل */
+    }
+
+    /* تأثير عند النقر */
+    .translate-button:active {
+        transform: scale(0.95); /* تصغير طفيف عند النقر */
+        background-color: #c0a602; /* لون أغمق */
+    }
+    /* إعدادات عامة */
+body {
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #e5e5e5;
+    line-height: 1.8;
+}
+
+/* جعل الرأس يتناسب مع الشاشة */
+header {
+    text-align: center;
+    background: linear-gradient(135deg, #3a3a3a, #000);
+    color: #f8c102;
+    padding: 2.5rem 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* التأكد من تنسيق النصوص والأزرار حسب حجم الشاشة */
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* التعديلات لأجهزة الهاتف والحواسيب */
+@media (max-width: 768px) {
+    /* رأس الصفحة */
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1.1rem;
+    }
+
+    /* قسم التعريف */
+    .about {
+        padding: 2rem;
+        margin: 1rem;
+    }
+
+    .about h2 {
+        font-size: 1.8rem;
+    }
+
+    .about p {
+        font-size: 1rem;
+    }
+
+    /* قسم الخدمات */
+    .services {
+        padding: 2rem;
+    }
+
+    .services h2 {
+        font-size: 1.8rem;
+    }
+
+    .service-list {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .service-item {
+        max-width: 100%;
+    }
+
+    /* الخريطة */
+    .map-container {
+        padding: 1.5rem;
+    }
+
+    .map-container h2 {
+        font-size: 1.8rem;
+    }
+
+    .map-wrapper iframe {
+        height: 300px;
+    }
+
+    /* الزر الترجمة */
+    .translate-button {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.2rem;
+    }
+}
+
+/* للأجهزة الأكبر من 768px */
+@media (min-width: 769px) {
+    /* قسم التعريف */
+    .about {
+        padding: 3rem;
+        max-width: 1000px;
+    }
+
+    /* قسم الخدمات */
+    .service-list {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .service-item {
+        max-width: 280px;
+    }
+
+    /* الخريطة */
+    .map-container {
+        max-width: 900px;
+    }
+
+    .map-wrapper iframe {
+        height: 400px;
+    }
+}
     </style>
 </head>
-<body> 
+<body>
+    <!-- أداة ترجمة Google -->
+    <div id="google_translate_element" style="text-align: center; margin: 10px 0;"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'ar'}, 'google_translate_element');
+        }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script>
+        // تعطيل عرض كود المصدر باستخدام Ctrl+U
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'u') {
+                e.preventDefault();
+                alert('عرض كود المصدر معطل.');
+            }
+        });
+    
+        // تعطيل النقر بزر الفأرة الأيمن
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            alert('النقر بزر الفأرة الأيمن معطل.');
+        });
+    
+        // تعطيل اختصارات Ctrl+Shift+I وCtrl+Shift+J وCtrl+Shift+C وF12
+        document.addEventListener('keydown', function(e) {
+            if (
+                (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || 
+                e.key === 'F12'
+            ) {
+                e.preventDefault();
+                alert('استخدام أدوات المطور معطل.');
+            }
+        });
+    </script>
     <!-- رأس الصفحة -->
     <header>
         <h1>بيت بتال</h1>
-        <p>وجهتك المثالية لتجربة الطعم الأصيل</p>
+        <p>تجربة طعام فاخرة لعشاق الذوق الرفيع</p>
     </header>
-    <div align="center"><img src="https://i.imgur.com/XiuHRvO.jpeg" alt="Image"></div>
-   <div align="center"><p><a href="https://baytbattaltakeaway.foodics.online/menu/-173018">Menu for more Information</a></p></div>
+    <div align="center"><img src="https://i.imgur.com/XiuHRvO.jpeg" alt="مطعم بيت بتال"></div>
+    <div align="center"><a href="https://baytbattaltakeaway.foodics.online/menu/-173018" class="menu-link">استعرض القائمة الآن</a></div>
+
     <!-- قسم التعريف -->
     <section class="about">
         <h2>من نحن</h2>
         <p>
-            مرحبًا بك في *بيت بتال*، المطعم الذي يجمع بين المذاق الأصيل والخدمة الممتازة. 
-            نقدم لك مجموعة متنوعة من الأطباق الشهية التي تلبي جميع الأذواق، بدءًا من المقبلات الشرقية وحتى الحلويات المميزة.
+            بيت بتال ليس مجرد مطعم؛ إنه وجهة للذوق الرفيع. 
+            نقدم أطباقًا محضرة بأعلى معايير الجودة، مع خدمة استثنائية تلبي توقعاتك وأكثر.
         </p>
         <p>
-            رؤيتنا هي تقديم تجربة فريدة لعملائنا من خلال استخدام مكونات طازجة وتحضير الأطباق بحب وشغف.
+            انضم إلينا لتعيش تجربة لا تُنسى مع أطباقنا الفاخرة وأجوائنا المميزة.
         </p>
     </section>
 
@@ -136,30 +405,40 @@
         <h2>خدماتنا</h2>
         <div class="service-list">
             <div class="service-item">
-                <h3>أطباق رئيسية</h3>
-                <p>مجموعة متنوعة من الأطباق الشرقية والغربية المحضرة بأفضل المكونات.</p>
+                <h3>أطباق راقية</h3>
+                <p>تجربة طعام لا مثيل لها بأطباق من المطبخ العالمي.</p>
             </div>
             <div class="service-item">
-                <h3>مقبلات مميزة</h3>
-                <p>استمتع بأشهى المقبلات والسلطات الطازجة.</p>
+                <h3>خدمة VIP</h3>
+                <p>خدمة شخصية تلبي جميع احتياجاتك باحترافية.</p>
             </div>
             <div class="service-item">
-                <h3>حلويات</h3>
-                <p>تشكيلة رائعة من الحلويات المحلية والعالمية.</p>
+                <h3>جلسات فاخرة</h3>
+                <p>أجواء راقية تناسب جميع المناسبات.</p>
             </div>
             <div class="service-item">
-                <h3>جلسات عائلية</h3>
-                <p>نوفر أجواء مريحة وجلسات تناسب العائلات والأصدقاء.</p>
-                
+                <h3>حلويات مميزة</h3>
+                <p>أصناف حلويات معدّة خصيصًا لتكتمل تجربتك.</p>
             </div>
         </div>
+    </section>
+    <section class="map-container">
+        <h2>موقعنا</h2>
+        <p>يمكنك زيارتنا في مطعم بيت بتال، حي الشلهوب، شارع الأمير عبدالإله بن عبدالعزيز، سكاكا.</p>
+        <div class="map-wrapper">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.13539063845!2d40.13293337484861!3d30.133933276899444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15e3bb329c69e85d%3A0x7e8070a5cbf536f6!2z2KfZhNi62K_ZiiDYp9mE2LnYsdmG2Kkg2LPZitmF2KfZgdi02Kkg2KfZhNmI2YHZiNmI2Kk!5e0!3m2!1sar!2ssa!4v1672515437909!5m2!1sar!2ssa"
+                allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+        <a href="https://maps.app.goo.gl/87YCDG8mbAoBM5Hh8" class="map-link" target="_blank">افتح الخريطة في Google Maps</a>
     </section>
     
 
     <!-- التذييل -->
     <footer>
-        <p>© 2024 بيت بتال - جميع الحقوق محفوظة</p>
-        <p>By kamal dannawi © </p>
+        <p>© 2025 بيت بتال - جميع الحقوق محفوظة</p>
+        <p>By Kamal Dannawi ©</p>
     </footer>
 </body>
 </html>
