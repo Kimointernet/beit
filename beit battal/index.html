@@ -194,81 +194,131 @@
         background-color: #d9a702;
         transform: scale(1.05);
     }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #a19f02;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
+    .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        .like-button {
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: #e74c3c;
-            outline: none;
-        }
+/* رأس الموقع */
+.header {
+    background: linear-gradient(135deg, #ff7b54, #ff6f61);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
 
-        .star-rating {
-            margin: 10px 0;
-        }
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
 
-        .star {
-            font-size: 24px;
-            cursor: pointer;
-            color: #ccc;
-        }
+.header p {
+    font-size: 1.2rem;
+}
 
-        .star:hover,
-        .star.selected {
-            color: gold;
-        }
+/* قسم الإحصائيات */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #1e1d01;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-        .comments-section {
-            margin-top: 20px;
-        }
+.stat h2 {
+    font-size: 1.2rem;
+    color: #ff6f61;
+}
 
-        textarea {
-            width: 100%;
-            height: 60px;
-            border: 1px solid #141313;
-            border-radius: 4px;
-            padding: 8px;
-            margin-bottom: 10px;
-            resize: none;
-        }
+.stat p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
 
-        button {
-            padding: 10px 20px;
-            background: #3498db;
-            color: #f7ebeb;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+/* زر الإعجاب */
+.btn {
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-        button:hover {
-            background: #2980b9;
-        }
+.btn:hover {
+    background-color: #e05d55;
+}
 
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
+/* قسم التقييم */
+.rating-section {
+    text-align: center;
+    margin: 20px 0;
+}
 
-        ul li {
-            background: #e62020;
-            margin: 5px 0;
-            padding: 10px;
-            border-radius: 4px;
-        }
+.stars {
+    font-size: 2rem;
+    color: #ffdd57;
+    cursor: pointer;
+}
 
+.star {
+    margin: 0 5px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.star:hover {
+    transform: scale(1.2);
+    color: #ffc107;
+}
+
+/* قسم التعليقات */
+.comments-section {
+    margin: 20px 0;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: none;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.comments-display {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.comment {
+    margin: 10px 0;
+    padding: 10px;
+    background: #f9f9f9;
+    border-left: 4px solid #ff6f61;
+    border-radius: 4px;
+}
+
+/* تذييل الموقع */
+.footer {
+    text-align: center;
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+    
     </style>
+    
 </head>
 <body>
+ 
 
     <script>
         // تعطيل عرض كود المصدر باستخدام Ctrl+U
@@ -349,128 +399,39 @@
         </div>
         <a href="https://maps.app.goo.gl/87YCDG8mbAoBM5Hh8" class="map-link" target="_blank">افتح الخريطة في Google Maps</a>
     </section>
+    
+   
     <div class="container">
-        <h1>منشور تفاعلي</h1>
-        <p id="view-count">المشاهدات: <span id="views">0</span></p>
-
-        <!-- زر الإعجاب -->
-        <button id="like-button" class="like-button">❤️ <span id="likes">0</span></button>
-
-        <!-- التقييم بالنجوم -->
-        <div class="star-rating">
-            <span class="star" data-value="1">☆</span>
-            <span class="star" data-value="2">☆</span>
-            <span class="star" data-value="3">☆</span>
-            <span class="star" data-value="4">☆</span>
-            <span class="star" data-value="5">☆</span>
-        </div>
-
-        <!-- سجل التعليقات -->
-        <div class="comments-section">
-            <h3>التعليقات</h3>
-            <textarea id="comment-input" placeholder="أضف تعليقًا..."></textarea>
-            <button id="add-comment">إضافة</button>
-            <ul id="comments-list"></ul>
-        </div>
+        
     </div>
+</header>
 
-    <script>
-        // توليد معرف فريد للجهاز
-        function getDeviceId() {
-            let deviceId = localStorage.getItem('deviceId');
-            if (!deviceId) {
-                deviceId = 'device-' + Math.random().toString(36).substr(2, 9);
-                localStorage.setItem('deviceId', deviceId);
-            }
-            return deviceId;
-        }
+<!-- محتوى الموقع -->
+<main class="container">
+    <!-- عرض الإحصائيات -->
+    <section class="stats">
+        <div class="stat">
+            <h2>عدد المشاهدات</h2>
+            <p id="viewCount">0</p>
+        </div>
+      </section>
 
-        const deviceId = getDeviceId();
+      
+<script lang="javascript">
+// تخزين البيانات
+let viewCount = 0;
+let likeCount = 0;
+let comments = [];
 
-        // عداد المشاهدات
-        document.addEventListener('DOMContentLoaded', () => {
-            let viewsData = JSON.parse(localStorage.getItem('viewsData')) || {};
-            if (!viewsData[deviceId]) {
-                viewsData[deviceId] = true;
-                const totalViews = Object.keys(viewsData).length;
-                localStorage.setItem('viewsData', JSON.stringify(viewsData));
-                document.getElementById('views').innerText = totalViews;
-            } else {
-                document.getElementById('views').innerText = Object.keys(viewsData).length;
-            }
+// تحديث المشاهدات عند تحميل الصفحة
+window.onload = function () {
+    viewCount++;
+    document.getElementById("viewCount").textContent = viewCount;
+};
 
-            // الإعجابات
-            let likes = localStorage.getItem('likes') || 0;
-            document.getElementById('likes').innerText = likes;
 
-            document.getElementById('like-button').addEventListener('click', () => {
-                likes++;
-                localStorage.setItem('likes', likes);
-                document.getElementById('likes').innerText = likes;
-            });
 
-            // التقييم بالنجوم
-            const stars = document.querySelectorAll('.star');
-            const savedRating = localStorage.getItem('rating');
-            if (savedRating) {
-                stars.forEach((star, index) => {
-                    if (index < savedRating) star.classList.add('selected');
-                });
-            }
-
-            stars.forEach(star => {
-                star.addEventListener('click', () => {
-                    const rating = star.getAttribute('data-value');
-                    localStorage.setItem('rating', rating);
-                    stars.forEach(s => s.classList.remove('selected'));
-                    for (let i = 0; i < rating; i++) {
-                        stars[i].classList.add('selected');
-                    }
-                });
-            });
-
-            // سجل التعليقات
-            const savedComments = JSON.parse(localStorage.getItem('comments')) || [];
-            const commentList = document.getElementById('comments-list');
-            savedComments.forEach(comment => {
-                const newComment = createCommentElement(comment);
-                commentList.appendChild(newComment);
-            });
-
-            document.getElementById('add-comment').addEventListener('click', () => {
-                const commentInput = document.getElementById('comment-input');
-                const commentText = commentInput.value.trim();
-
-                if (commentText !== '') {
-                    const comment = {
-                        text: commentText,
-                        timestamp: new Date().toLocaleString(),
-                    };
-
-                    savedComments.push(comment);
-                    localStorage.setItem('comments', JSON.stringify(savedComments));
-
-                    const newComment = createCommentElement(comment);
-                    commentList.appendChild(newComment);
-
-                    commentInput.value = '';
-                }
-            });
-        });
-
-        function createCommentElement(comment) {
-            const li = document.createElement('li');
-            const header = document.createElement('div');
-            header.classList.add('comment-header');
-            header.textContent = "في "+comment.timestamp;
-            const text = document.createElement('p');
-            text.textContent = comment.text;
-
-            li.appendChild(header);
-            li.appendChild(text);
-            return li;
-        }
-    </script>
+</script>
     
 
     <!-- التذييل -->
